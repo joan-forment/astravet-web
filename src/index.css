@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+@theme {
+  /* Dirección de arte Astra Vet */
+  --color-navy: #0d1b3d;
+  --color-navy-deep: #070f26;
+  --color-navy-soft: #14254e;
+  --color-turquoise: #12b3b6;
+  --color-turquoise-bright: #2adfe2;
+  --color-turquoise-deep: #0c8284;
+  --color-amber: #ffb347;
+  --color-coral: #ff7d6e;
+  --color-highlight: #F5A429;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  /* Escala de redondeos.
+     Había cuatro medidas arbitrarias sueltas por los componentes
+     (rounded-[1.5rem], [1.75rem], [2rem] y [2.5rem]) repartidas sin criterio:
+     dos tarjetas iguales una al lado de la otra podían tener esquinas
+     distintas. Ahora hay solo dos niveles, y se eligen por JERARQUÍA:
+
+       rounded-card  → una pieza de contenido (tarjeta, recuadro, fila).
+       rounded-panel → el contenedor que agrupa varias piezas.
+
+     Los recuadros de icono siguen con rounded-2xl y los botones con
+     rounded-full: son otra escala, la de los controles. */
+  --radius-card: 1.75rem;
+  --radius-panel: 2.5rem;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+/* El header es fijo (~88 px). Sin este margen, cualquier salto a una sección
+   que NO pase por el menú —un enlace pegado, el botón "atrás" del navegador,
+   la tecla de búsqueda del móvil— deja su primera línea tapada por la barra.
+   El menú aplica el mismo valor a mano al animar con Lenis (Header.jsx). */
+section[id],
+footer[id],
+[id="aviso-legal"] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Temas de sección (alternancia claro / oscuro)
+   Las utilidades de Tailwind v4 resuelven sus colores vía variables
+   (--color-white, --color-navy…). Reescribiéndolas en un contenedor,
+   toda la sección cambia de tema sin tocar cada clase una por una.
+   ────────────────────────────────────────────────────────────── */
+
+/* Sección redactada con la familia "white" mostrada sobre fondo claro:
+   los tokens blancos pasan a navy. */
+.section-light {
+  background-color: #ffffff;
+  color: #0d1b3e; /* el texto sin clase de color hereda navy, no blanco */
+  --color-white: #0d1b3e;
+}
+
+/* Sección redactada con la familia "navy" mostrada sobre fondo oscuro:
+   los tokens navy pasan a blanco y el turquesa apagado se aviva. */
+.section-dark {
+  background-color: #0d1b3e;
+  color: #ffffff; /* el texto sin clase de color hereda blanco, no navy */
+  --color-navy: #ffffff;
+  --color-navy-deep: #ffffff;
+  --color-navy-soft: #ffffff;
+  --color-turquoise-deep: #2adfe2;
+}
+
+/* Fondo oscuro sólido para secciones ya redactadas en claro/blanco. */
+.section-dark-solid {
+  background-color: #0d1b3e;
+}
+
+/* Tarjetas que conservan su estética oscura propia (simulan una pantalla
+   o van sobre una foto) sin importar el tema de la sección que las envuelve. */
+.theme-static {
+  color: #ffffff;
+  --color-white: #ffffff;
+  --color-navy: #0d1b3d;
+  --color-navy-deep: #070f26;
+  --color-navy-soft: #14254e;
+  --color-turquoise-deep: #0c8284;
+}
+
+html,
+body {
+  /* Blindaje extra anti-scroll-horizontal: ningún hijo desborda el ancho del viewport */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-navy font-sans text-white antialiased;
+}
+
+/* Multimedia fluida por defecto: ninguna imagen/vídeo rompe el layout en móvil.
+   Va en @layer base (por DEBAJO de las utilidades de Tailwind): así cualquier
+   clase de tamaño como h-11/w-auto sigue ganando y el height:auto solo actúa
+   sobre imágenes "sueltas". Sin la capa, esta regla anularía las utilidades
+   (el CSS sin capa gana al CSS en capa, ignorando la especificidad). */
+@layer base {
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+::selection {
+  background: var(--color-turquoise);
+  color: var(--color-navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-turquoise-bright);
+  outline-offset: 3px;
+}
+
+/* El cursor líquido sustituye al del sistema solo en punteros finos */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Oculta las barras de scroll manteniendo el desplazamiento (modal de formularios) */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE y Edge antiguo */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Luces de fondo de marca: gradientes radiales muy suaves */
+.glow-amber {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 179, 71, 0.16) 0%,
+    rgba(255, 179, 71, 0.05) 38%,
+    transparent 70%
+  );
+}
+
+.glow-coral {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 125, 110, 0.14) 0%,
+    rgba(255, 125, 110, 0.04) 40%,
+    transparent 70%
+  );
+}
+
+.glow-turquoise {
+  background: radial-gradient(
+    circle at center,
+    rgba(18, 179, 182, 0.18) 0%,
+    rgba(18, 179, 182, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+/* Textura diagonal sutil del manual de marca. Hereda currentColor. */
+.bg-diagonal-grid {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      currentColor 0px,
+      currentColor 1px,
+      transparent 1px,
+      transparent 64px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      currentColor 0px,
+      currentColor 1px,
+      transparent 1px,
+      transparent 64px
+    );
+}
+
+/* Titular hueco para piezas tipográficas gigantes */
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+}
+
+.text-stroke-turquoise {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(18, 179, 182, 0.85);
+}
+
+/* Inputs del lead capture sobre fondo navy */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1000px #14254e inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Indicador de scroll del hero */
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Cinta tipográfica del cierre */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Entrada del header fijo (CSS puro: GSAP y transition-* chocan en transform) */
+@keyframes header-drop {
+  from {
+    transform: translateY(-110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-header-drop {
+  animation: header-drop 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+/* Pulso del estado "En curso" */
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(255, 179, 71, 0.55);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 6px rgba(255, 179, 71, 0);
+  }
+}
+
+.animate-status-pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* Punto de grabación del distintivo "en directo" del temario. El halo va en
+   el rojo de emisión (#e5322d) y no en blanco: desde que la sección de temario
+   pasó a fondo claro, un halo blanco era invisible. */
+@keyframes rec-pulse-ink {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(229, 50, 45, 0.5);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 4px rgba(229, 50, 45, 0);
+  }
+}
+
+.animate-rec-pulse-ink {
+  animation: rec-pulse-ink 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-line,
+  .animate-marquee,
+  .animate-status-pulse,
+  .animate-rec-pulse-ink,
+  .animate-header-drop {
+    animation: none;
+  }
+  .animate-scroll-line {
+    transform: scaleY(1);
+  }
+}

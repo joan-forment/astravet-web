@@ -1,0 +1,69 @@
+# Configuración del servidor de Hostinger (Apache).
+#
+# Este archivo se copia solo dentro de la carpeta que se sube al hosting.
+# No hay que tocarlo ni entenderlo: solo hace que la web cargue más rápido.
+#
+# Todo va dentro de <IfModule>, así que si el servidor no tiene alguno de
+# estos módulos, simplemente se ignora esa parte y no rompe nada.
+
+# ── Comprimir los archivos de texto antes de enviarlos ──────────────────
+# Reduce mucho el peso de la web (el JavaScript pasa de ~1 MB a ~260 kB).
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── Guardar en caché lo que no cambia ───────────────────────────────────
+# Los archivos de la carpeta assets llevan un código único en el nombre
+# (index-D2xkQkFl.js): cuando se publica una versión nueva, cambia el nombre.
+# Por eso se pueden guardar un año entero sin riesgo de que alguien vea una
+# versión antigua.
+#
+# index.html es la excepción: no se guarda nunca en caché, para que cualquier
+# cambio (un precio, un texto) se vea inmediatamente al recargar.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# ── Una sola dirección para Google: https://www.astravet.es ───────────
+# Sin esto, astravet.es y www.astravet.es se ven como dos webs distintas que
+# se reparten el posicionamiento. Solo afecta a astravet.es: el subdominio del
+# campus (campus.astravet.es) tiene su propio .htaccess y no pasa por aquí.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^astravet\.es$ [NC]
+  RewriteRule ^ https://www.astravet.es%{REQUEST_URI} [L,R=301]
+</IfModule>
+# (http → https ya lo fuerza Hostinger en www.astravet.es: no se repite aquí.)
+
+# ── Tipos de archivo ─────────────────────────────────────────────────────
+AddType text/plain .txt
+AddDefaultCharset UTF-8
+
+# ── Documentos internos fuera de Google ──────────────────────────────────
+# El manual de marca sigue accesible con su enlace, pero no compite en Google
+# con la portada cuando alguien busca «AstraVet».
+<IfModule mod_headers.c>
+  <Files "brand-manual.html">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </Files>
+</IfModule>
+
+# ── Página de error ─────────────────────────────────────────────────────
+# Si alguien escribe una dirección que no existe, se le lleva a la portada.
+ErrorDocument 404 /index.html

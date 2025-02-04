@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidad — Astra Vet</title>
+    <meta
+      name="description"
+      content="Política de Privacidad y protección de datos de Astra Vet conforme al RGPD y la LOPDGDD."
+    />
+    <meta name="theme-color" content="#070f26" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/favicon-180.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0d1b3d;
+        --navy-deep: #070f26;
+        --navy-soft: #14254e;
+        --turquoise: #12b3b6;
+        --turquoise-bright: #2adfe2;
+        --amber: #ffb347;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+        background-color: var(--navy-deep);
+        color: rgba(255, 255, 255, 0.82);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: var(--turquoise);
+        color: var(--navy);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--turquoise-bright);
+        outline-offset: 3px;
+      }
+      .glow {
+        position: fixed;
+        top: -25%;
+        right: -15%;
+        width: 60vmax;
+        height: 60vmax;
+        pointer-events: none;
+        background: radial-gradient(
+          circle at center,
+          rgba(18, 179, 182, 0.16) 0%,
+          rgba(18, 179, 182, 0.04) 40%,
+          transparent 70%
+        );
+        z-index: 0;
+      }
+      .topbar {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 1.75rem 1.5rem;
+      }
+      .topbar img {
+        height: 1.85rem;
+        width: auto;
+      }
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .back:hover {
+        color: var(--turquoise-bright);
+      }
+      main {
+        position: relative;
+        z-index: 1;
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 6rem;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        color: var(--turquoise-bright);
+        margin-bottom: 1.25rem;
+      }
+      .eyebrow svg {
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+      h1 {
+        font-size: clamp(2.2rem, 6vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.04;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        color: #fff;
+      }
+      .updated {
+        margin-top: 1rem;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 2.5rem 0;
+      }
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #fff;
+        margin: 2.75rem 0 1rem;
+        letter-spacing: -0.01em;
+      }
+      h2:first-of-type {
+        margin-top: 0;
+      }
+      p {
+        margin-bottom: 1.1rem;
+        font-weight: 500;
+      }
+      ul {
+        margin: 0 0 1.1rem 1.2rem;
+      }
+      li {
+        margin-bottom: 0.6rem;
+        font-weight: 500;
+      }
+      strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      a {
+        color: var(--turquoise-bright);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 1.25rem;
+        padding: 1.5rem 1.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .card p {
+        margin-bottom: 0.5rem;
+      }
+      .card p:last-child {
+        margin-bottom: 0;
+      }
+      .highlight {
+        border-left: 3px solid var(--turquoise);
+      }
+      footer {
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+      footer a {
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      footer a:hover {
+        color: var(--turquoise-bright);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+
+    <div class="topbar">
+      <a href="/" aria-label="Volver al inicio de Astra Vet">
+        <img src="/logo-white.png" alt="Astra Vet" />
+      </a>
+      <a class="back" href="/">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Volver al inicio
+      </a>
+    </div>
+
+    <main>
+      <p class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" />
+        </svg>
+        Protección de datos
+      </p>
+      <h1>Política de Privacidad</h1>
+      <p class="updated">Última actualización: 15 de junio de 2026</p>
+
+      <div class="divider"></div>
+
+      <p>
+        Astra Vet se compromete a proteger la privacidad de los usuarios y a
+        tratar sus datos personales conforme al Reglamento (UE) 2016/679 General
+        de Protección de Datos (RGPD) y a la Ley Orgánica 3/2018, de 5 de
+        diciembre, de Protección de Datos Personales y Garantía de los Derechos
+        Digitales (LOPDGDD).
+      </p>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <div class="card">
+        <p><strong>Responsable:</strong> Astra Vet</p>
+        <p><strong>Domicilio:</strong> C/ Castellnou 57, Apdo. 14091, 08017, Barcelona, España</p>
+        <p><strong>Correo electrónico:</strong> <a href="mailto:admin@astravet.es">admin@astravet.es</a></p>
+      </div>
+
+      <h2>2. ¿Con qué finalidad tratamos sus datos personales?</h2>
+      <p>
+        En Astra Vet tratamos la información que nos facilitan las personas
+        interesadas con las siguientes finalidades:
+      </p>
+      <ul>
+        <li>Gestionar las solicitudes de información sobre nuestros cursos y servicios.</li>
+        <li>Gestionar las reservas de plaza y la inscripción en nuestras convocatorias.</li>
+        <li>Atender y responder a las comunicaciones, consultas y peticiones que nos remita el usuario.</li>
+        <li>Remitir, en su caso, comunicaciones relacionadas con los servicios solicitados.</li>
+      </ul>
+      <p>
+        No se elaborarán perfiles ni se tomarán decisiones automatizadas con
+        efectos jurídicos a partir de los datos facilitados.
+      </p>
+
+      <h2>3. ¿Cuál es la legitimación para el tratamiento de sus datos?</h2>
+      <p>
+        La base legal para el tratamiento de sus datos es el
+        <strong>consentimiento del interesado</strong> (art. 6.1.a del RGPD), que
+        se otorga de forma libre, específica, informada e inequívoca al marcar la
+        casilla de aceptación correspondiente y al remitir el formulario.
+      </p>
+      <p>
+        El usuario podrá retirar dicho consentimiento en cualquier momento, sin
+        que ello afecte a la licitud del tratamiento basado en el consentimiento
+        previo a su retirada.
+      </p>
+
+      <h2>4. ¿Durante cuánto tiempo conservaremos sus datos?</h2>
+      <div class="card highlight">
+        <p>
+          Los datos personales proporcionados
+          <strong>se conservarán mientras exista un interés legítimo o mutuo en
+          mantener la relación, o hasta que el usuario solicite su supresión.</strong>
+          Una vez retirado el consentimiento o solicitada la supresión, los datos
+          se conservarán debidamente bloqueados durante el tiempo necesario para
+          atender las posibles responsabilidades legales derivadas del
+          tratamiento, procediéndose después a su eliminación definitiva.
+        </p>
+      </div>
+
+      <h2>5. ¿A qué destinatarios se comunicarán sus datos?</h2>
+      <p>
+        <strong>No se cederán datos a terceros, salvo obligación legal.</strong>
+        Astra Vet no comunicará sus datos personales a otras entidades ni los
+        transferirá fuera del Espacio Económico Europeo, salvo que medie una
+        obligación legal que así lo exija.
+      </p>
+      <p>
+        En caso de que el tratamiento requiera la intervención de proveedores de
+        servicios (por ejemplo, servicios de alojamiento web o de correo
+        electrónico), éstos actuarán como encargados del tratamiento, vinculados
+        por contrato y con las garantías exigidas por la normativa vigente.
+      </p>
+
+      <h2>6. ¿Cuáles son sus derechos cuando nos facilita sus datos?</h2>
+      <p>
+        Cualquier persona tiene derecho a obtener confirmación sobre si Astra Vet
+        está tratando o no datos personales que le conciernen. En particular, las
+        personas interesadas pueden ejercer los siguientes derechos:
+      </p>
+      <ul>
+        <li><strong>Acceso:</strong> conocer qué datos personales se están tratando.</li>
+        <li><strong>Rectificación:</strong> solicitar la modificación de los datos inexactos o incompletos.</li>
+        <li><strong>Supresión («derecho al olvido»):</strong> solicitar la eliminación de los datos cuando, entre otros motivos, ya no sean necesarios para los fines para los que se recogieron.</li>
+        <li><strong>Oposición y limitación del tratamiento</strong>, así como la <strong>portabilidad</strong> de los datos, en los términos previstos por la normativa.</li>
+        <li><strong>Retirar el consentimiento</strong> prestado en cualquier momento.</li>
+      </ul>
+      <p>
+        El usuario podrá ejercer estos derechos dirigiendo una solicitud,
+        acompañada de copia de su documento identificativo, a la dirección
+        <a href="mailto:admin@astravet.es">admin@astravet.es</a> o por
+        correo postal al domicilio indicado en el apartado 1.
+      </p>
+      <p>
+        Asimismo, si considera que sus derechos no han sido debidamente
+        atendidos, tiene derecho a presentar una reclamación ante la
+        <strong>Agencia Española de Protección de Datos (AEPD)</strong>, con
+        domicilio en C/ Jorge Juan, 6, 28001, Madrid, o a través de su sede
+        electrónica: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.
+      </p>
+
+      <h2>7. Medidas de seguridad</h2>
+      <p>
+        Astra Vet ha adoptado las medidas técnicas y organizativas necesarias
+        para garantizar la seguridad de los datos personales y evitar su
+        alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del
+        estado de la tecnología, la naturaleza de los datos almacenados y los
+        riesgos a que están expuestos.
+      </p>
+
+      <h2>8. Veracidad de los datos</h2>
+      <p>
+        El usuario garantiza que los datos facilitados son veraces, exactos y
+        actualizados, y se compromete a comunicar cualquier modificación de los
+        mismos. Será responsable de la falsedad o inexactitud de los datos que
+        proporcione.
+      </p>
+
+      <div class="divider"></div>
+      <p>
+        Consulta también nuestro
+        <a href="/aviso-legal.html">Aviso Legal</a>.
+      </p>
+    </main>
+
+    <footer>
+      <span>© 2026 Astra Vet · Academia de formación veterinaria</span>
+      <span>
+        <a href="/aviso-legal.html">Aviso legal</a> ·
+        <a href="/politica-de-privacidad.html">Privacidad</a> ·
+        <a href="mailto:admin@astravet.es">admin@astravet.es</a>
+      </span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aviso Legal — Astra Vet</title>
+    <meta
+      name="description"
+      content="Aviso Legal y condiciones de uso del sitio web de Astra Vet, academia de formación veterinaria."
+    />
+    <meta name="theme-color" content="#070f26" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/favicon-180.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0d1b3d;
+        --navy-deep: #070f26;
+        --navy-soft: #14254e;
+        --turquoise: #12b3b6;
+        --turquoise-bright: #2adfe2;
+        --amber: #ffb347;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+        background-color: var(--navy-deep);
+        color: rgba(255, 255, 255, 0.82);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: var(--turquoise);
+        color: var(--navy);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--turquoise-bright);
+        outline-offset: 3px;
+      }
+      .glow {
+        position: fixed;
+        top: -25%;
+        right: -15%;
+        width: 60vmax;
+        height: 60vmax;
+        pointer-events: none;
+        background: radial-gradient(
+          circle at center,
+          rgba(18, 179, 182, 0.16) 0%,
+          rgba(18, 179, 182, 0.04) 40%,
+          transparent 70%
+        );
+        z-index: 0;
+      }
+      .topbar {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 1.75rem 1.5rem;
+      }
+      .topbar img {
+        height: 1.85rem;
+        width: auto;
+      }
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .back:hover {
+        color: var(--turquoise-bright);
+      }
+      main {
+        position: relative;
+        z-index: 1;
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 6rem;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        color: var(--turquoise-bright);
+        margin-bottom: 1.25rem;
+      }
+      .eyebrow svg {
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+      h1 {
+        font-size: clamp(2.2rem, 6vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.04;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        color: #fff;
+      }
+      .updated {
+        margin-top: 1rem;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 2.5rem 0;
+      }
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #fff;
+        margin: 2.75rem 0 1rem;
+        letter-spacing: -0.01em;
+      }
+      h2:first-of-type {
+        margin-top: 0;
+      }
+      p {
+        margin-bottom: 1.1rem;
+        font-weight: 500;
+      }
+      ul {
+        margin: 0 0 1.1rem 1.2rem;
+      }
+      li {
+        margin-bottom: 0.6rem;
+        font-weight: 500;
+      }
+      strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      a {
+        color: var(--turquoise-bright);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 1.25rem;
+        padding: 1.5rem 1.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .card p {
+        margin-bottom: 0.5rem;
+      }
+      .card p:last-child {
+        margin-bottom: 0;
+      }
+      footer {
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+      footer a {
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      footer a:hover {
+        color: var(--turquoise-bright);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+
+    <div class="topbar">
+      <a href="/" aria-label="Volver al inicio de Astra Vet">
+        <img src="/logo-white.png" alt="Astra Vet" />
+      </a>
+      <a class="back" href="/">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Volver al inicio
+      </a>
+    </div>
+
+    <main>
+      <p class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" />
+        </svg>
+        Información legal
+      </p>
+      <h1>Aviso Legal y Condiciones de Uso</h1>
+      <p class="updated">Última actualización: 15 de junio de 2026</p>
+
+      <div class="divider"></div>
+
+      <h2>1. Información general (titular del sitio web)</h2>
+      <p>
+        En cumplimiento del deber de información recogido en el artículo 10 de la
+        Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la
+        Información y de Comercio Electrónico (LSSI-CE), se facilitan a
+        continuación los datos identificativos del titular de este sitio web:
+      </p>
+      <div class="card">
+        <p><strong>Titular:</strong> Astra Vet</p>
+        <p><strong>Domicilio:</strong> C/ Castellnou 57, Apdo. 14091, 08017, Barcelona, España</p>
+        <p><strong>Correo electrónico:</strong> <a href="mailto:admin@astravet.es">admin@astravet.es</a></p>
+      </div>
+
+      <h2>2. Objeto</h2>
+      <p>
+        El presente Aviso Legal regula el acceso, la navegación y el uso del
+        sitio web de Astra Vet (en adelante, «el Sitio Web»), así como las
+        responsabilidades derivadas de su utilización. El acceso y la navegación
+        por el Sitio Web atribuyen la condición de usuario e implican la
+        aceptación plena y sin reservas de todas las disposiciones incluidas en
+        este Aviso Legal, que pueden sufrir modificaciones.
+      </p>
+      <p>
+        El usuario se compromete a hacer un uso adecuado y lícito del Sitio Web y
+        de sus contenidos, conforme a la legislación aplicable, al presente Aviso
+        Legal, a la buena fe y al orden público.
+      </p>
+
+      <h2>3. Condiciones de uso</h2>
+      <p>
+        El usuario se obliga a no emplear el Sitio Web ni sus contenidos para
+        fines ilícitos o lesivos de los derechos e intereses de terceros, ni de
+        cualquier forma que pueda dañar, inutilizar, sobrecargar o deteriorar el
+        Sitio Web o impedir su normal utilización por parte de otros usuarios.
+      </p>
+      <p>
+        Astra Vet podrá interrumpir el servicio o resolver de modo inmediato la
+        relación con el usuario si detecta un uso del Sitio Web o de cualquiera
+        de los servicios ofrecidos que sea contrario a lo establecido en este
+        Aviso Legal.
+      </p>
+
+      <h2>4. Propiedad intelectual e industrial</h2>
+      <p>
+        Todos los contenidos del Sitio Web —incluyendo, a título enunciativo y no
+        limitativo, textos, fotografías, gráficos, imágenes, iconos, tecnología,
+        software, diseño gráfico, animaciones, código fuente, marcas, nombres
+        comerciales y logotipos— son titularidad de Astra Vet o de terceros que
+        han autorizado su uso, y están protegidos por la normativa nacional e
+        internacional sobre propiedad intelectual e industrial.
+      </p>
+      <p>
+        Queda expresamente prohibida la reproducción, distribución, comunicación
+        pública, transformación o cualquier otra forma de explotación, total o
+        parcial, de los contenidos del Sitio Web sin la autorización previa y por
+        escrito de Astra Vet. El acceso al Sitio Web no otorga al usuario ningún
+        derecho de titularidad sobre los contenidos que en él se incluyen.
+      </p>
+
+      <h2>5. Exclusión de responsabilidad</h2>
+      <p>
+        Astra Vet no se hace responsable, en ningún caso, de los daños y
+        perjuicios de cualquier naturaleza que pudieran ocasionarse por:
+      </p>
+      <ul>
+        <li>Errores u omisiones en los contenidos.</li>
+        <li>
+          Falta de disponibilidad del Sitio Web o la transmisión de virus o
+          programas maliciosos en los contenidos, a pesar de haber adoptado las
+          medidas tecnológicas necesarias para evitarlo.
+        </li>
+        <li>
+          El uso ilícito, negligente, fraudulento o contrario a este Aviso Legal
+          por parte del usuario.
+        </li>
+      </ul>
+
+      <h2>6. Enlaces a terceros</h2>
+      <p>
+        El Sitio Web puede contener enlaces a otros sitios web de terceros (por
+        ejemplo, perfiles en redes sociales). Astra Vet no ejerce ningún control
+        sobre dichos sitios ni se responsabiliza de sus contenidos, políticas de
+        privacidad o prácticas. La inclusión de estos enlaces no implica la
+        aprobación o respaldo de los mismos.
+      </p>
+
+      <h2>7. Legislación aplicable y jurisdicción</h2>
+      <p>
+        El presente Aviso Legal se rige por la legislación española. Para la
+        resolución de cualquier controversia que pudiera derivarse del acceso o
+        uso del Sitio Web, las partes se someten a los Juzgados y Tribunales del
+        domicilio del usuario, cuando éste tenga la condición de consumidor, o a
+        los de la ciudad de Barcelona en los demás casos.
+      </p>
+
+      <div class="divider"></div>
+      <p>
+        Consulta también nuestra
+        <a href="/politica-de-privacidad.html">Política de Privacidad</a>.
+      </p>
+    </main>
+
+    <footer>
+      <span>© 2026 Astra Vet · Academia de formación veterinaria</span>
+      <span>
+        <a href="/aviso-legal.html">Aviso legal</a> ·
+        <a href="/politica-de-privacidad.html">Privacidad</a> ·
+        <a href="mailto:admin@astravet.es">admin@astravet.es</a>
+      </span>
+    </footer>
+  </body>
+</html>

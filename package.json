@@ -1,0 +1,30 @@
+{
+  "name": "astra-vet-sin-pago",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/seo.mjs",
+    "publicar": "npm run build && node scripts/empaquetar.mjs",
+    "preview": "vite preview",
+    "avisar-buscadores": "node scripts/indexnow.mjs"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@studio-freight/react-lenis": "^0.0.47",
+    "gsap": "^3.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.160.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "playwright-core": "^1.60.0",
+    "tailwindcss": "^4.1.4",
+    "vite": "^5.4.11"
+  }
+}
